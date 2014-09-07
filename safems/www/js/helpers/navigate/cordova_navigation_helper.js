@@ -3,7 +3,12 @@ var navigation = {
     transition : null,
     router : null,
     defaultUri : null,
+    navScroll : null,
+    _lang : null,
     init: function(){
+        this._lang = lang['en'];
+        if($('#screen').length == 0)
+            $('.app').append('<div id="screen"></div>');
         this.setRoutes();
     },
     setRoutes : function(){
@@ -14,11 +19,8 @@ var navigation = {
                   "*page":"loadPage",
             },
             loadPage : function(params){
-                alert('loadpage '+params);
                 if(!params) return false;
                 if(navigation.defaultUri == null){
-                    alert(navigation.defaultUri);
-                    alert(device);
                     if ( device.platform == 'android' || device.platform == 'Android' )
                     {
                         navigation.defaultUri = params.replace('index.html', '');
@@ -30,9 +32,9 @@ var navigation = {
                         params = params.replace(re, '%20');
                         navigation.defaultUri = params.replace('index.html', '');
                     }
+                    return false;
                 }
                 var paramsArray = params.split('/');
-                alert(navigation.defaultUri);
                 var param = 0;
                 var infoObject = "{";
                 for(var i = 0; i < paramsArray.length; i += 2){
@@ -57,7 +59,6 @@ var navigation = {
         console.log('navigation init root ended');
     },
     loadPage : function(){
-        alert(navigation.pageInfos.page);
         navigation.oldPage = $('#screen div').first();
         var leftPos = 0;
         var nextLeftPos = 0;
@@ -90,25 +91,35 @@ var navigation = {
         navigation.addResource(pageName, 'js');
         $('#screen').prepend('<div class="content" id="' + pageName + '"></div>');
         $('#' + pageName).css('left', nextLeftPos);
+        if (device.platform == "firefoxos"){
+            var uri = location.origin + "/" + 'content/pages/' + pageName + '.html';
+        } else {
+            var uri = 'file:///' + navigation.defaultUri + 'content/pages/' + pageName + '.html';
+        }
         $('#' + pageName).load(uri, function(response, status, xhr) {
-            alert(status);
             if(status == 'success'){
                 $('#' + pageName + ' .txtdyn').each(function(index){
-                    $(this).html(app._($(this).data('text')));
+                    $(this).html(navigation._($(this).data('text')));
                 });
                 $('#' + pageName + ' .valdyn').each(function(index){
-                    $(this).attr('value', app._($(this).data('value')));
+                    $(this).attr('value', navigation._($(this).data('value')));
                 });
                 TweenLite.to($('#' + pageName), navigation.tweentime, {css:{'left':'0'}, ease:Power4.easeOut, delay:.5});
                 TweenLite.to($('#' + navigation.oldPage.attr('id')), navigation.tweentime, {css:{'left':leftPos}, ease:Power4.easeOut, delay:.5, onComplete:function(){
+                    /* on set le wrapper de la page en js parce que la hauteur ne peut etre calsulée en percent */
+                    navigation.setPageWrapper();
                     navigation.removeResource(navigation.oldPage.attr('id'), 'css');
                     navigation.removeResource(navigation.oldPage.attr('id'), 'js');
                     $('#' + navigation.oldPage.attr('id')).remove();
-                    //caw_ui.setWrapper();
-                    //caw_ui.unLockScreen();
                 }});
             }
         });
+    },
+    setPageWrapper : function(){
+        var h = $(window).height() - $('.header').height();
+        $('.wrapper').css('height', h+'px');
+        /* on initialise la scroll de la page */
+        this.navScroll = new IScroll($('.wrapper'), {});
     },
     addResource: function(filename, filetype) {
         if (filetype == 'js'){
@@ -143,6 +154,85 @@ var navigation = {
 			}
 		}
 	},
+    setListeners : function(){
+        var self = this;
+        this.shutterNavigation = new shutter();
+        this.shutterNavigation.init();
+        if ( device.platform == 'android' || device.platform == 'Android' )
+        {
+            document.addEventListener('menubutton', function(){
+                self.shutterNavigation.open();
+            }, false);
+
+            document.addEventListener("backbutton", function(){
+                if(window.history.length>0){
+                    navigation.transition = 'swipeRight';
+                    window.history.back();
+                }else{
+                    navigator.app.exitApp();
+                }
+            }, false);
+        }
+        
+        $(document).bind('tap', function(e){
+            var page = "";
+            if($(e.target).parent().attr('data-action')){
+                if($(e.target).parent().attr('data-action') == "refresh"){
+                    navigation._currentPageScript.refresh();
+                }
+                if($(e.target).parent().attr('data-action') == "open_navigation"){
+                    navigation.shutterNavigation.open();
+                }
+            }
+            if($(e.target).attr('data-page')){
+                if($(e.target).attr('data-page') == 'backbutton'){
+                    navigation.transition = 'swipeRight';
+                    window.history.back();
+                    return;
+                }else{
+                    page = $(e.target).attr('data-page');
+                }
+            }else{
+                if(!$(e.target).parent().attr('data-page')){
+                    return false;
+                }else{
+                    if($(e.target).parent().attr('data-page') == 'backbutton'){
+                        navigation.transition = 'swipeRight';
+                        window.history.back();
+                        return;
+                    }else{
+                        page = $(e.target).parent().attr('data-page');
+                    }
+                }
+            }
+            if($(e.target).attr('data-transition')){
+                navigation.transition = $(e.target).attr('data-transition');
+            }else{
+                if($(e.target).parent().attr('data-transition')){
+                    navigation.transition = $(e.target).parent().attr('data-transition');
+                }else{
+                    navigation.transition = null;
+                }
+            }
+            /* on set le force reload si on est en train de re harger le meme script pour eviter de sucrer la page js */
+            var pageName = page.split('/');
+            if(pageName[0] == navigation.pageInfos.page)
+                navigation._force_reload = true;
+            else
+                navigation._force_reload = false;
+            
+            navigation.router.navigate('page/'+page, {trigger: true, replace: false});
+        });
+    },
+    _: function(key) {
+        if (arguments.length > 1) {
+			var args = Array.prototype.slice.call(arguments);
+			args.shift();
+			args.unshift(navigation._lang[key]);
+			return String.format.apply(this, args);
+		}
+		return navigation._lang[key];
+	},
     goBack : function(){
         Backbone.history.start();
         Backbone.history.back();
@@ -155,4 +245,3 @@ var navigation = {
         
     }
 }
-navigation.init();
