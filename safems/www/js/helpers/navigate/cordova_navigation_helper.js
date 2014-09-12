@@ -5,11 +5,15 @@ var navigation = {
     defaultUri : null,
     navScroll : null,
     _lang : null,
+    oldPage : null,
     init: function(){
         this._lang = lang['en'];
         if($('#screen').length == 0)
             $('.app').append('<div id="screen"></div>');
+        if($('#navigationLocker').length == 0)
+            $('body').append('<div id="navigationLocker"></div>');
         this.setRoutes();
+        this.setListeners();
     },
     setRoutes : function(){
         console.log('navigation init root');
@@ -59,6 +63,7 @@ var navigation = {
         console.log('navigation init root ended');
     },
     loadPage : function(){
+        this.lockScreen();
         navigation.oldPage = $('#screen div').first();
         var leftPos = 0;
         var nextLeftPos = 0;
@@ -104,13 +109,16 @@ var navigation = {
                 $('#' + pageName + ' .valdyn').each(function(index){
                     $(this).attr('value', navigation._($(this).data('value')));
                 });
-                TweenLite.to($('#' + pageName), navigation.tweentime, {css:{'left':'0'}, ease:Power4.easeOut, delay:.5});
-                TweenLite.to($('#' + navigation.oldPage.attr('id')), navigation.tweentime, {css:{'left':leftPos}, ease:Power4.easeOut, delay:.5, onComplete:function(){
+                TweenLite.to($('#screen div').first(), navigation.tweentime, {css:{'left':'0'}, ease:Power4.easeOut, delay:.5});
+                TweenLite.to(navigation.oldPage, navigation.tweentime, {css:{'left':leftPos}, ease:Power4.easeOut, delay:.5, onComplete:function(){
                     /* on set le wrapper de la page en js parce que la hauteur ne peut etre calsulée en percent */
+                    if(!navigation._force_reload){
+                        navigation.removeResource(navigation.oldPage.attr('id'), 'css');
+                        navigation.removeResource(navigation.oldPage.attr('id'), 'js');
+                    }
+                    navigation.oldPage.remove();
                     navigation.setPageWrapper();
-                    navigation.removeResource(navigation.oldPage.attr('id'), 'css');
-                    navigation.removeResource(navigation.oldPage.attr('id'), 'js');
-                    $('#' + navigation.oldPage.attr('id')).remove();
+                    navigation.unlockScreen();
                 }});
             }
         });
@@ -119,7 +127,26 @@ var navigation = {
         var h = $(window).height() - $('.header').height();
         $('.wrapper').css('height', h+'px');
         /* on initialise la scroll de la page */
-        this.navScroll = new IScroll($('.wrapper'), {});
+        this.navScroll = new IScroll('.wrapper', {
+            scrollbars: false,
+            //shrinkScrollbars : true,
+            /*resizeScrollbars : false,*/
+            /*indicators: {
+                fade: false,
+                ignoreBoundaries: false,
+                interactive: false,
+                listenX: false,
+                listenY: true,
+                resize: false,
+                shrink: true,
+                speedRatioX: 0,
+                speedRatioY: 0,
+            },*/
+            //momentum :false,
+            /*interactiveScrollbars: true,*/
+            /*shrinkScrollbars: 'scale',*/
+            fadeScrollbars: false
+        });
     },
     addResource: function(filename, filetype) {
         if (filetype == 'js'){
@@ -156,12 +183,12 @@ var navigation = {
 	},
     setListeners : function(){
         var self = this;
-        this.shutterNavigation = new shutter();
-        this.shutterNavigation.init();
-        if ( device.platform == 'android' || device.platform == 'Android' )
+        //this.shutterNavigation = new shutter();
+        //this.shutterNavigation.init();
+        /*if ( device.platform == 'android' || device.platform == 'Android' )
         {
             document.addEventListener('menubutton', function(){
-                self.shutterNavigation.open();
+                //self.shutterNavigation.open();
             }, false);
 
             document.addEventListener("backbutton", function(){
@@ -172,16 +199,15 @@ var navigation = {
                     navigator.app.exitApp();
                 }
             }, false);
-        }
-        
-        $(document).bind('tap', function(e){
+        }*/
+        $(document).on('touchstart', function(e){
             var page = "";
             if($(e.target).parent().attr('data-action')){
                 if($(e.target).parent().attr('data-action') == "refresh"){
                     navigation._currentPageScript.refresh();
                 }
                 if($(e.target).parent().attr('data-action') == "open_navigation"){
-                    navigation.shutterNavigation.open();
+                    //navigation.shutterNavigation.open();
                 }
             }
             if($(e.target).attr('data-page')){
@@ -214,7 +240,6 @@ var navigation = {
                     navigation.transition = null;
                 }
             }
-            /* on set le force reload si on est en train de re harger le meme script pour eviter de sucrer la page js */
             var pageName = page.split('/');
             if(pageName[0] == navigation.pageInfos.page)
                 navigation._force_reload = true;
@@ -233,6 +258,12 @@ var navigation = {
 		}
 		return navigation._lang[key];
 	},
+    lockScreen : function(){
+        $('#navigationLocker').css('display', 'block');
+    },
+    unlockScreen : function(){
+        $('#navigationLocker').css('display', 'none');
+    },
     goBack : function(){
         Backbone.history.start();
         Backbone.history.back();

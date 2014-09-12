@@ -1,4 +1,4 @@
-var home_page = {
+var right_page = {
     init : function(){
         navigation._currentPageScript = this;
     },
