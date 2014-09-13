@@ -7,6 +7,10 @@ var app = {
     },
     onDeviceReady: function() {
         navigation.init();
+        myService = cordova.plugins.myService;
+        getStatus();
+        startService();
+        enableTimer();
     },
     receivedEvent: function(id) {
         

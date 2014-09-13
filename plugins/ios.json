@@ -23,6 +23,9 @@
         },
         "com.red_folder.phonegap.plugin.backgroundservice": {
             "PACKAGE_NAME": "com.tricycle.safems"
+        },
+        "com.red_folder.phonegap.plugin.backgroundservice.sample": {
+            "PACKAGE_NAME": "com.tricycle.safems"
         }
     },
     "dependent_plugins": {}

@@ -1,0 +1,40 @@
+.right_list_button{
+    position:absolute;
+    right:0;
+    color:#FFF;
+    height:100%;
+    width:0px;
+    top:0;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+}
+.left_list_button{
+    position:absolute;
+    left:0;
+    color:#FFF;
+    height:100%;
+    width:0px;
+    top:0;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+}
+.right_list_button .icon{
+    font-family:clic_and_walk_v1regular;
+    font-size:20px;
+    padding-left:10px;
+    padding-right:10px;
+    line-height:50px;
+    color:#FFF;
+}
+.left_list_button .icon{
+    font-family:clic_and_walk_v1regular;
+    font-size:20px;
+    padding-left:10px;
+    padding-right:10px;
+    line-height:50px;
+    color:#FFF;
+}
