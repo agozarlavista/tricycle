@@ -38,12 +38,16 @@
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.device": {
+        "com.badrit.BackgroundJS": {
             "PACKAGE_NAME": "com.tricycle.safems"
         },
         "com.red_folder.phonegap.plugin.backgroundservice": {
             "PACKAGE_NAME": "com.tricycle.safems"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.tricycle.safems"
+        }
+    }
 }
