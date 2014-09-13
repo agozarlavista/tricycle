@@ -1,0 +1,64 @@
+var background_helper = {
+    init : function(){
+        console.log('init');
+        var self = this;
+        self.getStatus();
+        setConfig();
+    },
+    getStatus : function(){
+        console.log('getStatus');
+        var self = this;
+        getStatus(function(data){
+            console.log(data);
+            if(data.code == 200){
+                self.startService();
+            }
+        });
+    },
+    startService : function(){
+        console.log('startService');
+        var self = this;
+        startService(function(data){
+            console.log(data);
+            if(data.code == 200){
+                self.startTimerIntent();
+            }
+        });
+    },
+    startTimerIntent : function(){
+        console.log('startTimeIntent');
+        var self = this;
+        enableTimer(function(data){
+            console.log(data);
+            if(data.code == 200){
+                self.registerForBootStart();
+            }
+        });
+    },
+    registerForBootStart : function(){
+        console.log('registerForBootStart');
+        var self = this;
+        registerForBootStart(function(data){
+            console.log(data);
+            if(data.code == 200){
+                self.registerForUpdates();
+            }
+        });
+    },
+    registerForUpdates : function(){
+        console.log('registerForUpdates');
+        var self = this;
+        registerForUpdates(function(data){
+            console.log(data);
+            if(data.code == 200){
+                console.log('say hello background');
+            }
+        });
+    },
+    destroy : function(){
+        stopService(function(){});
+        disableTimer(function(){});
+        deregisterForBootStart(function(){});
+        deregisterForUpdates(function(){});
+    }
+}

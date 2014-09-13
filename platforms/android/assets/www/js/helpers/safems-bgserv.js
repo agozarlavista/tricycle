@@ -1,68 +1,84 @@
+var _callBack = null;
+function loadModule(){
+    var serviceName = 'com.red_folder.phonegap.plugin.backgroundservice.sample.MyService';
+    /*
+     * Get an instance of the background service factory
+     * Use it to create a background service wrapper for your service
+     */
+    var factory = require('com.red_folder.phonegap.plugin.backgroundservice.BackgroundService');
+    module.exports = factory.create(serviceName);
+}
+
 function handleSuccess(data) {
-    console.log(data);
-    alert('success');
-	//updateView(data);
+    _callBack({code:200, message:'success', data:data});
 }
 
 function handleError(data) {
-    console.log(data);
-	alert("Error: " + data.ErrorMessage);
-	alert(JSON.stringify(data));
-	//updateView(data);
+    _callBack({code:401, message:'error forbiden', data:data});
 }
 
 /*
  * Button Handlers
  */ 			
-function getStatus() {
+function getStatus(callBack) {
+    _callBack = callBack;
 	myService.getStatus(	function(r){handleSuccess(r)},
 							function(e){handleError(e)});
 };
 
-function startService() {
+function startService(callBack) {
+    _callBack = callBack;
 	myService.startService(	function(r){handleSuccess(r)},
 							function(e){handleError(e)});
 }
 
-function stopService() {
+function stopService(callBack) {
+    _callBack = callBack;
 	myService.stopService(	function(r){handleSuccess(r)},
 							function(e){handleError(e)});
 }
 
-function enableTimer() {
+function enableTimer(callBack) {
+    _callBack = callBack;
 	myService.enableTimer(	1000,
 							function(r){handleSuccess(r)},
 							function(e){handleError(e)});
 }
 
-function disableTimer() {
+function disableTimer(callBack) {
+    _callBack = callBack;
 	myService.disableTimer(	function(r){handleSuccess(r)},
 							function(e){handleError(e)});
 };
  			
-function registerForBootStart() {
+function registerForBootStart(callBack) {
+    _callBack = callBack;
 	myService.registerForBootStart(	function(r){handleSuccess(r)},
 									function(e){handleError(e)});
 }
 
-function deregisterForBootStart() {
+function deregisterForBootStart(callBack) {
+    _callBack = callBack;
 	myService.deregisterForBootStart(	function(r){handleSuccess(r)},
 										function(e){handleError(e)});
 }
 
-function registerForUpdates() {
+function registerForUpdates(callBack) {
+    _callBack = callBack;
 	myService.registerForUpdates(	function(r){handleSuccess(r)},
 									function(e){handleError(e)});
 }
 
-function deregisterForUpdates() {
+function deregisterForUpdates(callBack) {
+    _callBack = callBack;
 	myService.deregisterForUpdates(	function(r){handleSuccess(r)},
 									function(e){handleError(e)});
 }
 
 function setConfig() {
-	var helloToTxt = document.getElementById("helloToTxt");
-	var helloToString = helloToTxt.value;
+	//var helloToTxt = document.getElementById("helloToTxt");
+	var helloToString = "simon say hello";
+    //helloToTxt.value;
 	var config = { 
 					"HelloTo" : helloToString 
 				}; 

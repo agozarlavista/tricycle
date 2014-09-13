@@ -1,18 +1,32 @@
 var app = {
-    initialize: function() {
-        this.bindEvents();
-    },
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    onDeviceReady: function() {
-        navigation.init();
+	initialize: function() {
+		this.bindEvents();
+	},
+	bindEvents: function() {
+		document.addEventListener('deviceready', this.onDeviceReady, false);
+	},
+	onDeviceReady: function() {
+		navigation.init();
         myService = cordova.plugins.myService;
-        getStatus();
-        startService();
+        background_helper.init();
+		//getStatus();
+        /*startService();
         enableTimer();
-    },
-    receivedEvent: function(id) {
-        
-    }
+        registerForBootStart();
+        registerForUpdates();*/
+        /*var timerCount = 0;
+		window.plugins.BackgroundJS.LockBackgroundTime(
+			function(){}, 
+			function(msg){
+				console.log(msg);
+			}
+		);
+		setInterval(function() {
+			$('body').html(timerCount++);
+		},100);*/
+	},
+	receivedEvent: function(id) {
+
+	}
 };
+var myService;

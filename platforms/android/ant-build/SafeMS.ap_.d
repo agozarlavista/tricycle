@@ -91,6 +91,7 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/components/diaporama.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/components/shutter.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/components/slidify.js \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/background_helper.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/languages.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/navigate \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/safems-bgserv.js \
@@ -105,6 +106,7 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/plugins/iscroll.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/plugins/iscroll_opt.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/plugins/mobiScroll \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/plugins/requireJs.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/plugins/swipe_options_menu.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/plugins/tweener \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/plugins/backbones/backbone-min.js \

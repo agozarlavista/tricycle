@@ -9,3 +9,4 @@ var home_page = {
         
     }
 }
+home_page.init();
