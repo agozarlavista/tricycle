@@ -94,6 +94,7 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/background_helper.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/languages.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/navigate \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/plugins_helper.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/safems-bgserv.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/navigate/cordova_navigation_helper.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/pages/home.js \
@@ -189,10 +190,14 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/com.red_folder.phonegap.plugin.backgroundservice \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/com.red_folder.phonegap.plugin.backgroundservice.sample \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/org.apache.cordova.device \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/org.apache.cordova.device-motion \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/com.red_folder.phonegap.plugin.backgroundservice/www \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/com.red_folder.phonegap.plugin.backgroundservice/www/backgroundService.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/com.red_folder.phonegap.plugin.backgroundservice.sample/www \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/com.red_folder.phonegap.plugin.backgroundservice.sample/www/myService.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www/Acceleration.js \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www/accelerometer.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/AndroidManifest.xml \

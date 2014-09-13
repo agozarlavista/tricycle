@@ -53,6 +53,7 @@ var background_helper = {
             if(data.code == 200){
                 console.log('say hello background');
             }
+            plugins_helper.updateGiroSessions();
         });
     },
     destroy : function(){

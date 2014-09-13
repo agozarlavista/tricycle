@@ -29,11 +29,17 @@ public class MyService extends BackgroundService {
 
 			Log.d(TAG, msg);
 		} catch (JSONException e) {
+            
 		}
 		
 		return result;	
 	}
-
+    /*@Override
+	protected launchTheApp() {
+        Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.tricycle.safems");
+        startActivity(LaunchIntent);
+    }*/
+    
 	@Override
 	protected JSONObject getConfig() {
 		JSONObject result = new JSONObject();
