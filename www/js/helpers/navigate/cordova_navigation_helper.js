@@ -143,7 +143,7 @@ var navigation = {
                 speedRatioY: 0,
             },*/
             //momentum :false,
-            /*interactiveScrollbars: true,*/
+            interactiveScrollbars: true,
             /*shrinkScrollbars: 'scale',*/
             fadeScrollbars: false
         });

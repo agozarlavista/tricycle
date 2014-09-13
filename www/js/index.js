@@ -30,3 +30,15 @@ var app = {
 	}
 };
 var myService;
+
+$("#aaaaaaaaa").on("click", function(){
+	console.log("tapette");
+	var config = { 
+					"HelloTo" : helloToString,
+					"LaunchAPP" : "yes"
+				}; 
+	myService.setConfiguration(	config,
+								function(r){handleSuccess(r)},
+								function(e){handleError(e)});
+	background_helper.registerForUpdates();
+})

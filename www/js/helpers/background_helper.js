@@ -47,7 +47,7 @@ var background_helper = {
     },
     registerForUpdates : function(){
         console.log('registerForUpdates');
-        var self = this;
+        var self = this;    
         registerForUpdates(function(data){
             console.log(data);
             if(data.code == 200){
