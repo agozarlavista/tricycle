@@ -81,7 +81,9 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/css/plugins/mobiscroll/mobiscroll.widget.jqm.css \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/css/plugins/mobiscroll/mobiscroll.widget.sense-ui.css \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/css/plugins/mobiscroll/mobiscroll.widget.wp.css \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/img/icons \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/img/logo.png \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/img/icons/icon_1024.png \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/backgroundservice.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/components \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers \
@@ -97,6 +99,7 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/plugins_helper.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/safems-bgserv.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/navigate/cordova_navigation_helper.js \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/navigate/structure_helper.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/pages/home.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/pages/left.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/pages/right.js \
