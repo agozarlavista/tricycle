@@ -1,0 +1,39 @@
+.home{
+    font-family: typicons;
+}
+.app_logo{
+    background-image: url(../../img/icons/app_logo.png);
+    background-size:contain;
+    width: 100%;
+    height: 200px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-top:10px;
+}
+
+.response_label{
+    width: 100%;
+    display: table;
+    position: relative;
+    float: left;
+    height: 50px;
+    border-bottom: 1px solid #E3E3E3;
+}
+.response_label .label{
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    padding-left: 5%;
+    min-height: 50px;
+    line-height: 50px;
+}
+.response_label .arrow{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: Flaticon;
+    color: #E3E3E3;
+    padding-right: 10px;
+    font-size: 30px;
+    line-height: 40px;
+}

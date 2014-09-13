@@ -24,7 +24,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
+    background-color:#FFFFFF;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
@@ -39,4 +39,41 @@ body {
     margin:0;
     padding:0;
     overflow: hidden;
+}
+
+.actionButton{
+    margin-left:3%;
+    margin-right:3%;
+    width:94%;
+    height:50px;
+    margin-top:10px;
+    margin-bottom:10px;
+    background-color:#333;
+    color:#FFF;
+}
+
+.actionButton span{
+    line-height: 50px;
+    padding-left:10px;
+    font-family: helvetica;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.actionButton .iconbutton{
+    float: right;
+    padding-right: 15px;
+    font-family: Flaticon;
+    font-size: 40px;
+    line-height: 38px;
+    font-style: normal;
+}
+
+.infoText{
+    width:90%;
+    display:table;
+    color:#514d45;
+    font-size:12px;
+    font-weight:300;
+    padding-left:5%;
 }

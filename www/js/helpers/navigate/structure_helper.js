@@ -1,4 +1,4 @@
-var language = [
+var structure_helper = {
     'fr':{
         'origin':{
             'title':'Mon Message',
@@ -34,4 +34,4 @@ var language = [
             
         }
     }
-]
+}

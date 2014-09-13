@@ -1,4 +1,5 @@
 var app = {
+    _language : 'fr',
 	initialize: function() {
 		this.bindEvents();
 	},

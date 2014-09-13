@@ -26,15 +26,21 @@
     display:table;
     position:relative;
     float:left;
+    border-bottom:1px solid #E3E3E3;
 }
 .header .buttonLeft{
-    width:40px;
-    height:40px;
-    left:5px;
-    top:5px;
-    position:absolute;
-    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    left: 5px;
+    top: 5px;
+    position: absolute;
+    line-height: 27px;
     text-align: center;
+    font-family: Flaticon;
+    font-size: 50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 .header .buttonRight{
     width:40px;
@@ -42,28 +48,20 @@
     right:5px;
     top:5px;
     position:absolute;
-    line-height: 40px;
+    line-height: 27px;
     text-align: center;
+    font-family: Flaticon;
+    font-size:50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 .header .pageTitle{
     text-align: center;
     font-size:15px;
-    color:#FFF;
+    color:#333;
     font-weight: 600;
     line-height: 50px;
-}
-
-.grey{
-    background-color:#333;
-    color:#FFF;
-}
-.greya{
-    background-color:#333;
-    color:#FFF;
-}
-.greya:active{
-    background-color:#000;
-    color:#FFF;
 }
 
 .wrapper{
@@ -78,4 +76,83 @@
     height:101%;
     display:table;
     position:absolute;
+}
+
+.grey{
+    background-color:#333;
+    color:#FFF;
+}
+.grey .dark{
+    color:#000;
+}
+.greya .dark{
+    color:#000;
+}
+.greya{
+    background-color:#333;
+    color:#FFF;
+}
+.greya:active{
+    background-color:#000;
+    color:#FFF;
+}
+
+.white{
+    background-color:#fff;
+    color:#333;
+    font-weight: bold;
+}
+.white .dark{
+    color:#000;
+}
+.whitea .dark{
+    color:#000;
+}
+.whitea{
+    background-color:#FFF;
+    color:#333;
+}
+.whitea:active{
+    background-color:#F9F9F9;
+    color:#333;
+}
+
+.green{
+    background-color:#4dad32 ;
+    color:#FFF;
+    font-weight: bold;
+}
+.green .dark{
+    color:#377c21;
+}
+.greena .dark{
+    color:#377c21;
+}
+.greena{
+    background-color:#4dad32;
+    color:#fff;
+}
+.greena:active{
+    background-color:#479b2c ;
+    color:#fff;
+}
+
+.red{
+    background-color:#e74620;
+    color:#FFF;
+    font-weight: bold;
+}
+.red .dark{
+    color:#b73423;
+}
+.reda .dark{
+    color:#b73423;
+}
+.reda{
+    background-color:#e74620;
+    color:#fff;
+}
+.reda:active{
+    background-color:#d84023;
+    color:#fff;
 }

@@ -32,13 +32,13 @@
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.tricycle.safems"
-        },
         "com.red_folder.phonegap.plugin.backgroundservice": {
             "PACKAGE_NAME": "com.tricycle.safems"
         },
         "com.red_folder.phonegap.plugin.backgroundservice.sample": {
+            "PACKAGE_NAME": "com.tricycle.safems"
+        },
+        "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.tricycle.safems"
         },
         "org.apache.cordova.device-motion": {
