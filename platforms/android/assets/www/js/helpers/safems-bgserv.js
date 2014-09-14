@@ -40,7 +40,7 @@ function stopService(callBack) {
 
 function enableTimer(callBack) {
     _callBack = callBack;
-	myService.enableTimer(	1000,
+	myService.enableTimer(	10000,
 							function(r){handleSuccess(r)},
 							function(e){handleError(e)});
 }

@@ -7,11 +7,13 @@ var navigation = {
     _lang : null,
     oldPage : null,
     init: function(){
-        this._lang = lang['en'];
-        if($('#screen').length == 0)
+        this._lang = lang[app._language];
+        if($('#screen').length == 0){
             $('.app').append('<div id="screen"></div>');
-        if($('#navigationLocker').length == 0)
+        }
+        if($('#navigationLocker').length == 0){
             $('body').append('<div id="navigationLocker"></div>');
+        }
         this.setRoutes();
         this.setListeners();
     },
@@ -59,7 +61,7 @@ var navigation = {
         Backbone.history.start({pushState:true});
         navigation.transition = 'instant';
         var startPage = 'home';
-        navigation.router.navigate('page/'+startPage+"/param1/simon/nom/delamarre", {trigger: true, replace: true});
+        navigation.router.navigate('page/'+startPage+'/nom/sdvds/prenom/dsvjsdnv/dskvhbsd/cdkvbds', {trigger: true, replace: true});
         console.log('navigation init root ended');
     },
     loadPage : function(){
@@ -72,12 +74,12 @@ var navigation = {
             case 'swipeLeft':
                 leftPos = '-100%';
                 nextLeftPos = '100%';
-                navigation.tweentime = .4;
+                navigation.tweentime = .6;
                 break;
             case 'swipeRight':
                 leftPos = '100%';
                 nextLeftPos = '-100%';
-                navigation.tweentime = .4;
+                navigation.tweentime = .6;
                 break;
             case 'instant':
                 leftPos = '100%';
@@ -87,7 +89,7 @@ var navigation = {
             default:
                 leftPos = '-100%';
                 nextLeftPos = '100%';
-                navigation.tweentime = .4;
+                navigation.tweentime = .6;
                 break;
         }
         var pageName = navigation.pageInfos.page;
@@ -109,16 +111,31 @@ var navigation = {
                 $('#' + pageName + ' .valdyn').each(function(index){
                     $(this).attr('value', navigation._($(this).data('value')));
                 });
-                TweenLite.to($('#screen div').first(), navigation.tweentime, {css:{'left':'0'}, ease:Power4.easeOut, delay:.5});
-                TweenLite.to(navigation.oldPage, navigation.tweentime, {css:{'left':leftPos}, ease:Power4.easeOut, delay:.5, onComplete:function(){
+                /*
+                setTimeout(function(){
+                    if(navigation._force_reload){
+                        navigation._currentPageScript.init();
+                    }
+                }, 500);
+                */
+                if(typeof navigation._currentPageScript !== 'undefined' && navigation._force_reload || pageName == "question"){
+                    navigation._currentPageScript.init($('#screen div').first());
+                }
+                TweenLite.to($('#screen div').first(), navigation.tweentime, {css:{'left':'0'}, delay:.5, ease:Back.easeOut});
+                TweenLite.to(navigation.oldPage, navigation.tweentime, {css:{'left':leftPos}, ease:Back.easeIn, onComplete:function(){
                     /* on set le wrapper de la page en js parce que la hauteur ne peut etre calsulée en percent */
                     if(!navigation._force_reload){
                         navigation.removeResource(navigation.oldPage.attr('id'), 'css');
                         navigation.removeResource(navigation.oldPage.attr('id'), 'js');
                     }
+                    //if(navigation._force_reload){
+                    //    alert('force reload');
+                        
+                    //}
                     navigation.oldPage.remove();
                     navigation.setPageWrapper();
                     navigation.unlockScreen();
+                    //navigation._currentPageScript.init();
                 }});
             }
         });
@@ -200,7 +217,7 @@ var navigation = {
                 }
             }, false);
         }*/
-        $(document).on('touchstart', function(e){
+        Hammer( document ).on('tap', function(e){
             var page = "";
             if($(e.target).parent().attr('data-action')){
                 if($(e.target).parent().attr('data-action') == "refresh"){
@@ -241,11 +258,11 @@ var navigation = {
                 }
             }
             var pageName = page.split('/');
-            if(pageName[0] == navigation.pageInfos.page)
+            if(pageName[0] == navigation.pageInfos.page){
                 navigation._force_reload = true;
-            else
+            }else{
                 navigation._force_reload = false;
-            
+            }
             navigation.router.navigate('page/'+page, {trigger: true, replace: false});
         });
     },

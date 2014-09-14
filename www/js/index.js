@@ -1,5 +1,6 @@
 var app = {
 	isUserAlcoolized: false,
+    _language : 'fr',
 	initialize: function() {
 		this.bindEvents();
 	},

@@ -28,4 +28,6 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/tricycle/safems/R.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/tricycle/safems/SafeMS.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/org/apache/cordova/devicemotion/AccelListener$1.class \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/org/apache/cordova/devicemotion/AccelListener.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/dexedLibs/classes-9158a2f0380eda98932bb8accc72c4f5.jar \

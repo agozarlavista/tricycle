@@ -7,11 +7,13 @@ var app = {
 	},
 	onDeviceReady: function() {
 		navigation.init();
-		getStatus();
-        startService();
+        myService = cordova.plugins.myService;
+        background_helper.init();
+		//getStatus();
+        /*startService();
         enableTimer();
         registerForBootStart();
-        registerForUpdates();
+        registerForUpdates();*/
         /*var timerCount = 0;
 		window.plugins.BackgroundJS.LockBackgroundTime(
 			function(){}, 
@@ -27,3 +29,4 @@ var app = {
 
 	}
 };
+var myService;

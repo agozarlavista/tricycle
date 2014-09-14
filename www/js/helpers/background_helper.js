@@ -52,6 +52,7 @@ var background_helper = {
             if(data.data.LatestResult.Message){
                 console.log(data.data.LatestResult.Message);
             }
+            plugins_helper.updateGiroSession();
         });
     },
     destroy : function(){

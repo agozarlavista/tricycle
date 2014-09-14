@@ -1,19 +1,30 @@
-<div class="header grey">
-    <div class="buttonLeft greya" data-page="left" data-transition="swipeRight"><</div>
+<div class="header white">
+    <div class="buttonLeft whitea" data-page="infos" data-transition="swipeRight">R</div>
     <!--<div class="buttonMenu"></div>
     <div class="buttonBack"></div>-->
-    <div class="pageTitle greya txtdyn" data-text="HOME_TITLE"></div>
-    <div class="buttonRight greya" data-page="right" data-transition="swipeLeft">></div>
+    <div class="pageTitle txtdyn" data-text="HOME_TITLE"></div>
+    <!--<div class="buttonRight greya" data-page="right" data-transition="swipeLeft">></div>-->
 </div>
 <div class="wrapper">
     <div class="scroller">
-        <br/>
-        <a href="#" id="aaaaaaaaa">plop</a>
-        <br/>
-        <div class="actionButton" id="getStatus">get status plugin infos</div>
-        <div class="actionButton" id="startService">start service</div>
-        <div class="actionButton" id="enableTimer">enable timer</div>
-        <div class="actionButton" id="registerForBootStart">register for boot start</div>
-        <div class="actionButton" id="registerForUpdates">register for update</div>
+        <div class="app_logo"></div>
+        <div class="title textdyn" data-text="TITLE_HAVE_RESPONSES" style="display:none;"></div>
+        <div class="actionButton" id="btn_show_response" data-page="help" style="display:none;">
+            <span class="buttonText txtdyn" data-text="BTN_SHOW_RESPONSES"></span>
+            <i class="iconbutton">A</i>
+        </div>
+        <p class="infoText txtdyn" id="intro_text" data-text="HOME_INTRO_TEXT" style="text-align:center;"></p>
+        <div class="actionButton greena" id="btn_help_user" data-page="question/quiz/origin">
+            <span class="buttonText txtdyn" data-text="BTN_HELP_USER"></span>
+            <i class="iconbutton dark">V</i>
+        </div>
+        <div class="actionButton reda" id="btn_need_help" data-page="question/quiz/origin">
+            <span class="buttonText txtdyn" data-text="BTN_NEED_HELP"></span>
+            <i class="iconbutton dark">W</i>
+        </div>
+        <div class="actionButton greena" data-page="detect">
+            <span class="buttonText txtdyn" data-text="BTN_HELP_USER"></span>
+            <i class="iconbutton dark">V</i>
+        </div>
     </div>
 </div>
