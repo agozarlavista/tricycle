@@ -25,6 +25,7 @@ var lang = {
         'GAME_SELECTION_TITLE'  : 'Que faire?',
         'GAME_SELECTION_TEXT'   : 'C\'est comme tu veux.<br/>À tes risques et périles...',
         'GET_LUCKY_TITLE'       : 'Get lucky',
-        'GET_LUCKY_TEXT'        : 'Tip Tap Toe'
+        'GET_LUCKY_TEXT'        : 'Tip Tap Toe',
+        'GAME_BRAS_TENDU'       : 'Le but de l\'exercice est de rester le bras tendu pendant 20 secondes! Le compteur démarre des que vous tendez le bras...'
     }
 }

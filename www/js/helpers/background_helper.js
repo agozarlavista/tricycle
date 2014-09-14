@@ -50,7 +50,7 @@ var background_helper = {
         var self = this;    
         registerForUpdates(function(data){
             if(data.data.LatestResult.Message){
-                if (data.data.LatestResult.Message.indexOf("com.android.mms.ComposeMessageActivity") != -1){
+                if (data.data.LatestResult.Message == "Messaging"){
                     app.isUserComposeMessage = true;
                 }else{
                     app.isUserComposeMessage = false;

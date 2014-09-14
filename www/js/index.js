@@ -54,6 +54,7 @@ var app = {
         }
     },
 	alcoolizedUserDetected: function(){
+		console.log("Spotted!");
 		if (this.isUserComposeMessage){
 			this.isUserAlcoolized = true;
 		    var config = {
