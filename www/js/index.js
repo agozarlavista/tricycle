@@ -1,4 +1,5 @@
 var app = {
+	isUserAlcoolized: false,
     _language : 'fr',
 	initialize: function() {
 		this.bindEvents();
@@ -10,6 +11,15 @@ var app = {
 		navigation.init();
         myService = cordova.plugins.myService;
         background_helper.init();
+        document.addEventListener(
+        	"resume", 
+        	function() { 
+        		console.log(this);
+        		app.onResume(); 
+        	}, 
+        	false
+        );
+
 		//getStatus();
         /*startService();
         enableTimer();
@@ -40,6 +50,25 @@ var app = {
 		} catch(err) {
 		    console.log("getLocalStorage error:", err);
 		    return [];
+        }
+    },
+	alcoolizedUserDetected: function(){
+		this.isUserAlcoolized = true;
+	    var config = {
+	        "HelloTo" : "plop",
+	        "LaunchAPP" : "yes"
+	    };
+	    myService.setConfiguration(
+		    config,
+		    function(r){handleSuccess(r)},
+		    function(e){handleError(e)}
+		);
+	},
+	onResume: function (){
+		if (app.isUserAlcoolized){
+			console.log('navigation.goto("detect")');
+		} else {
+			console.log("user is not alcoolized");
 		}
 	}
 };
