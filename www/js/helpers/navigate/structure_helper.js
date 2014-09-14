@@ -19,8 +19,8 @@ var structure_helper = {
             'responses':[
                 {'label':'Je démissionne', 'redir':'wrongwayboss'},
                 {'label':'Je vais être en retard', 'redir':'wrongwayboss'},
-                {'label':'je t\'aime', 'redir':'wrongwayboss'},
-                {'label':'félicitation, beau travail!', 'redir':'wrongwayboss'}
+                {'label':'Je t\'aime', 'redir':'wrongwayboss'},
+                {'label':'Félicitation, beau travail!', 'redir':'wrongwayboss'}
             ],
             'buttons':[]
         },

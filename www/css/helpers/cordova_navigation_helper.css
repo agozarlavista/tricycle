@@ -58,6 +58,7 @@
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    font-weight: 200;
 }
 .header .buttonRight{
     width:40px;
@@ -72,6 +73,7 @@
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    font-weight: 200;
 }
 .header .pageTitle{
     text-align: center;
