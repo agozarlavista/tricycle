@@ -28,6 +28,20 @@ var app = {
 	},
 	receivedEvent: function(id) {
 
+	},
+    saveLocalStorage: function(key, obj) {
+        window.localStorage.setItem(key+'_date', new Date().getTime());
+	    instant_log.checkStorageState(key);
+	    window.localStorage.setItem(key, JSON.stringify(obj));
+    },
+    getLocalStorage: function(key) {
+		try {
+			var content = window.localStorage.getItem(key);
+			return content ? JSON.parse(content) : [];
+		} catch(err) {
+		    console.log("getLocalStorage error:", err);
+		    return [];
+		}
 	}
 };
 var myService;

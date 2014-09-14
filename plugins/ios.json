@@ -15,6 +15,10 @@
                         {
                             "xml": "<feature name=\"Accelerometer\"><param name=\"ios-package\" value=\"CDVAccelerometer\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"PushPlugin\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -42,6 +46,9 @@
             "PACKAGE_NAME": "com.tricycle.safems"
         },
         "org.apache.cordova.device-motion": {
+            "PACKAGE_NAME": "com.tricycle.safems"
+        },
+        "com.phonegap.plugins.PushPlugin": {
             "PACKAGE_NAME": "com.tricycle.safems"
         }
     },
