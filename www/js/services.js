@@ -31,9 +31,9 @@ var services = {
         console.log('error ', e);
     },
     register : function(){
-        if(app.getLocalStorage('user') == ""){
+        /*if(app.getLocalStorage('user') == ""){
             return;
-        }
+        }*/
         services.loadService(
             {
                 uid:device.uuid,

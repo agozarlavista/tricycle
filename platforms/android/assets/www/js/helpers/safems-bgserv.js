@@ -40,7 +40,7 @@ function stopService(callBack) {
 
 function enableTimer(callBack) {
     _callBack = callBack;
-	myService.enableTimer(	10000,
+	myService.enableTimer(	4000,
 							function(r){handleSuccess(r)},
 							function(e){handleError(e)});
 }
@@ -75,12 +75,13 @@ function deregisterForUpdates(callBack) {
 									function(e){handleError(e)});
 }
 
-function setConfig() {
+function setConfig(launchapp) {
 	//var helloToTxt = document.getElementById("helloToTxt");
 	var helloToString = "simon say hello";
     //helloToTxt.value;
 	var config = { 
-					"HelloTo" : helloToString 
+					"HelloTo" : helloToString,
+					"LaunchAPP" : "yes"
 				}; 
 	myService.setConfiguration(	config,
 								function(r){handleSuccess(r)},
