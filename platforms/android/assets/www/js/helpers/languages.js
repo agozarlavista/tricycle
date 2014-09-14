@@ -12,6 +12,9 @@ var lang = {
         'BTN_NEED_HELP'         : 'J\'ai besoin d\'aide',
         'TITLE_HAVE_RESPONSES'  : 'Vous avez reçu des réponses!',
         'BTN_SHOW_RESPONSES'    : 'Voir les réponses',
-        'HOME_INTRO_TEXT'       : 'Don\'t Panic, SafeMS est bien actif!<br/>Tu peux passer une bonne soirée...<br/>Pitetre à tout à l\'heure!'
+        'HOME_INTRO_TEXT'       : 'Don\'t Panic, SafeMS est bien actif!<br/>Tu peux passer une bonne soirée...<br/>Pitetre à tout à l\'heure!',
+        'DETECT_TITLE'          : 'Anomalie',
+        'DETECT_QUESTION'       : 'T\'as bu ?',
+        'DETECT_INTRO_TEXT'     : 'SafeMS à constaté une anomalie dans la formulation de votre message. Nous allons vous aider!'
     }
 }

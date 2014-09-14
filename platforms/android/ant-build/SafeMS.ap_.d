@@ -41,6 +41,7 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/plugins \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/Sans-titre-1.png \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/content/pages \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/content/pages/detect.html \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/content/pages/home.html \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/content/pages/infos.html \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/content/pages/left.html \
@@ -60,6 +61,7 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/css/font/typicons.ttf \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/css/font/typicons.woff \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/css/helpers/cordova_navigation_helper.css \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/css/pages/detect.css \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/css/pages/home.css \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/css/pages/infos.css \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/css/pages/left.css \
@@ -115,6 +117,7 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/safems-bgserv.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/navigate/cordova_navigation_helper.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/helpers/navigate/structure_helper.js \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/pages/detect.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/pages/home.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/pages/infos.js \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/assets/www/js/pages/left.js \

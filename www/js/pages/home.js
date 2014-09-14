@@ -3,6 +3,7 @@ var home_page = {
         console.log('home page');
         navigation._currentPageScript = this;
         this.showInitApp();
+        $('#monbouton').on('click', function(){alert('hello');});
     },
     showInitApp : function(){
         var self = this;

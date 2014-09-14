@@ -8,10 +8,12 @@ var navigation = {
     oldPage : null,
     init: function(){
         this._lang = lang[app._language];
-        if($('#screen').length == 0)
+        if($('#screen').length == 0){
             $('.app').append('<div id="screen"></div>');
-        if($('#navigationLocker').length == 0)
+        }
+        if($('#navigationLocker').length == 0){
             $('body').append('<div id="navigationLocker"></div>');
+        }
         this.setRoutes();
         this.setListeners();
     },
@@ -109,15 +111,18 @@ var navigation = {
                 $('#' + pageName + ' .valdyn').each(function(index){
                     $(this).attr('value', navigation._($(this).data('value')));
                 });
-                /*setTimeout(function(){
+                /*
+                setTimeout(function(){
                     if(navigation._force_reload){
                         navigation._currentPageScript.init();
                     }
-                }, 500);*/
-                if(typeof navigation._currentPageScript !== 'undefined' && navigation._force_reload || pageName == "question")
+                }, 500);
+                */
+                if(typeof navigation._currentPageScript !== 'undefined' && navigation._force_reload || pageName == "question"){
                     navigation._currentPageScript.init($('#screen div').first());
-                TweenLite.to($('#screen div').first(), navigation.tweentime, {css:{'left':'0'}, ease:Back.easeOut});
-                TweenLite.to(navigation.oldPage, navigation.tweentime, {css:{'left':leftPos}, ease:Back.easeOut, onComplete:function(){
+                }
+                TweenLite.to($('#screen div').first(), navigation.tweentime, {css:{'left':'0'}, delay:.5, ease:Back.easeOut});
+                TweenLite.to(navigation.oldPage, navigation.tweentime, {css:{'left':leftPos}, ease:Back.easeIn, onComplete:function(){
                     /* on set le wrapper de la page en js parce que la hauteur ne peut etre calsulée en percent */
                     if(!navigation._force_reload){
                         navigation.removeResource(navigation.oldPage.attr('id'), 'css');
@@ -212,7 +217,7 @@ var navigation = {
                 }
             }, false);
         }*/
-        $(document).on('touchstart', function(e){
+        Hammer( document ).on('tap', function(e){
             var page = "";
             if($(e.target).parent().attr('data-action')){
                 if($(e.target).parent().attr('data-action') == "refresh"){
@@ -253,11 +258,11 @@ var navigation = {
                 }
             }
             var pageName = page.split('/');
-            if(pageName[0] == navigation.pageInfos.page)
+            if(pageName[0] == navigation.pageInfos.page){
                 navigation._force_reload = true;
-            else
+            }else{
                 navigation._force_reload = false;
-            
+            }
             navigation.router.navigate('page/'+page, {trigger: true, replace: false});
         });
     },

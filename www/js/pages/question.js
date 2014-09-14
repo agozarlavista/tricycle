@@ -3,6 +3,9 @@ var question_page = {
     init : function(target){
         navigation._currentPageScript = this;
         console.log('question page ', navigation.pageInfos);
+        if(navigation.pageInfos.page != "question"){
+            return false;
+        }
         console.log(structure_helper[app._language][navigation.pageInfos.quiz]);
         this._quizStructure = structure_helper[app._language][navigation.pageInfos.quiz];
         this.createTemplate();
