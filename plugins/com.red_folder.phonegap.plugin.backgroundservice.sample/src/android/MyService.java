@@ -15,6 +15,7 @@ import android.content.pm.ApplicationInfo;
 import android.view.View;
 import android.view.Window;
 import android.content.ComponentName;
+import android.content.pm.PackageInfo;
 
 import com.red_folder.phonegap.plugin.backgroundservice.BackgroundService;
 import android.content.Intent;
@@ -59,16 +60,18 @@ public class MyService extends BackgroundService {
 		JSONObject result = new JSONObject();
 		
 		try {
-
+			/*
 			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
 			String now = df.format(new Date(System.currentTimeMillis()));
         	
         	ActivityManager mActivityManager = (ActivityManager) getSystemService(Activity.ACTIVITY_SERVICE);
-			ComponentName current_act = mActivityManager.getRunningTasks(1).get(0).topActivity;
+			ComponentName pkgname = mActivityManager.getRunningTasks(1).get(0).topActivity.getPackageName();
+			PackageManager pm = AppService.this.getPackageManager();
+			PackageInfo pkginfo = pm.getPackageInfo(pkgname, 0);
 			// View fenetre = current_act.getWindow().getDecorView();
 			// String msg = "Hello " +  getTopActivityStackName() + " - its currently " + now;
-            //ComposeMessageActivity plopeur = current_act.clone();
-			String msg = "Hello " +  current_act.toString() + " - its currently " + now;
+            //ComposeMessageActivity plopeur = current_act.clone(); */
+			String msg = getTopActivityStackName();
 			result.put("Message", msg);
 
 		} catch (JSONException e) {

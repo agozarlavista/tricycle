@@ -50,7 +50,11 @@ var background_helper = {
         var self = this;    
         registerForUpdates(function(data){
             if(data.data.LatestResult.Message){
-                console.log(data.data.LatestResult.Message);
+                if (data.data.LatestResult.Message == "Messaging"){
+                    app.isUserComposeMessage = true;
+                }else{
+                    app.isUserComposeMessage = false;
+                }
             }
             plugins_helper.updateGiroSession();
         });
