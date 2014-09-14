@@ -1,7 +1,12 @@
 var plugins_helper = {
+    unacceptableDifference: 2,
+    lastGirodata: null,
+    distanceError: 0,
+    maxDistanceError: 2,
     _giroSession : [],
     _distances : [],
     init: function(){
+        console.log("init gyro");
         this._giroSession = [];
         this._distances = [];
     },
@@ -9,30 +14,26 @@ var plugins_helper = {
         navigator.accelerometer.getCurrentAcceleration(plugins_helper.accelerometerSuccess, plugins_helper.accelerometerError);
     },
     accelerometerSuccess : function (acceleration){
-        //acceleration.x acceleration.y acceleration.z acceleration.timestamp
-        this._giroSession.push(acceleration);
-        this.checkLastUpdateDistance();
+        plugins_helper.checkLastUpdateDistance(acceleration);
+        plugins_helper.lastGirodata = acceleration;
     },
-    checkLastUpdateDistance : function(){
-        if(this._giroSession.length>1){
-            var Xa = this._giroSession[this._giroSession.length-1].x;
-            var Xb = this._giroSession[this._giroSession.length].x;
-            var Ya = this._giroSession[this._giroSession.length-1].y;
-            var Yb = this._giroSession[this._giroSession.length].y;
-            var Za = this._giroSession[this._giroSession.length-1].z;
-            var Zb = this._giroSession[this._giroSession.length].z;
-            var distance = 8;
-            //Math.sqrt(Math.sqrt(Xa-Xb)+Math.sqrt(Ya-Yb)+Math.sqrt(Za-Zb));
-            this._distances.push(distance);
-            //if($('#dump').length > 0){
-                $('#dump').html(JSON.stringify(this._giroSession));
-                //$('#distance').html(JSON.stringify(this._distances));
-            //}
-            //alert(this._giroSession);
+    checkLastUpdateDistance : function(acceleration){
+        if (plugins_helper.lastGirodata != null) {
+            testX = Math.abs(Math.round(acceleration.x - plugins_helper.lastGirodata.x));
+            testY = Math.abs(Math.round(acceleration.y - plugins_helper.lastGirodata.y));
+            testZ = Math.abs(Math.round(acceleration.z - plugins_helper.lastGirodata.z));
+        
+            if(testZ > plugins_helper.unacceptableDifference || testY > plugins_helper.unacceptableDifference || testX > plugins_helper.unacceptableDifference){
+                plugins_helper.distanceError += plugins_helper.distanceError + 1;
+            }
         }
+        if (plugins_helper.distanceError >= plugins_helper.maxDistanceError && ! app.isUserAlcoolized){
+            app.alcoolizedUserDetected();
+        }
+
     },
     accelerometerError : function (datas){
-        console.log('OH SHIT YOUR PHONE SUCK MAMAMYA');
+        //console.log('OH SHIT YOUR PHONE SUCK MAMAMYA');
     },
     destroy : function(){
         this._giroSession = [];

@@ -1,5 +1,6 @@
 var app = {
 	isUserAlcoolized: false,
+	isUserComposeMessage: false,
     _language : 'fr',
 	initialize: function() {
 		this.bindEvents();
@@ -40,20 +41,25 @@ var app = {
 
 	},
 	alcoolizedUserDetected: function(){
-		this.isUserAlcoolized = true;
-	    var config = {
-	        "HelloTo" : "plop",
-	        "LaunchAPP" : "yes"
-	    };
-	    myService.setConfiguration(
-		    config,
-		    function(r){handleSuccess(r)},
-		    function(e){handleError(e)}
-		);
+		if (this.isUserComposeMessage){
+			this.isUserAlcoolized = true;
+		    var config = {
+		        "HelloTo" : "plop",
+		        "LaunchAPP" : "yes"
+		    };
+		    myService.setConfiguration(
+			    config,
+			    function(r){handleSuccess(r)},
+			    function(e){handleError(e)}
+			);
+		}
 	},
 	onResume: function (){
 		if (app.isUserAlcoolized){
 			console.log('navigation.goto("detect")');
+			navigation.router.navigate("page/detect", {trigger: true, replace: false});
+			app.isUserAlcoolized = false;
+			plugins_helper.distanceError = 0;
 		} else {
 			console.log("user is not alcoolized")
 		}
