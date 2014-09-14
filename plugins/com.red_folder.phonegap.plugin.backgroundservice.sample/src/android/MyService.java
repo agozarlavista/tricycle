@@ -10,19 +10,18 @@ import android.util.Log;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.ActivityManager.RunningTaskInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ApplicationInfo;
 import android.view.View;
 import android.view.Window;
 import android.content.ComponentName;
 import android.content.pm.PackageInfo;
-
 import com.red_folder.phonegap.plugin.backgroundservice.BackgroundService;
 import android.content.Intent;
 import android.content.ContextWrapper;
 import android.content.Context;
-
-
+import android.net.Uri;
 
 public class MyService extends BackgroundService {
 	
@@ -53,6 +52,29 @@ public class MyService extends BackgroundService {
         intent.setClassName("com.tricycle.safems", "com.tricycle.safems.SafeMS");
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
+
+    protected void backsms() {
+    	/*
+        ActivityManager mActivityManager = (ActivityManager) getSystemService(Activity.ACTIVITY_SERVICE);
+        PackageManager mPackageManager = getPackageManager();
+        Activity acti = mActivityManager.getRunningTasks(1).get(0).topActivity();
+
+        Intent intent = new Intent("android.intent.category.LAUNCHER");
+        intent.setClassName(acti.getPackageName(), acti.getPackageName() + '.' + acti.getClassName());
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        */
+        Intent intent = new Intent("android.intent.action.VIEW");
+ 
+                /** creates an sms uri */
+                Uri data = Uri.parse("sms:");
+ 
+                /** Setting sms uri to the intent */
+                intent.setData(data);
+ 
+                /** Initiates the SMS compose screen, because the activity contain ACTION_VIEW and sms uri */
+                startActivity(intent);
     }
 
 	@Override
@@ -99,6 +121,8 @@ public class MyService extends BackgroundService {
 				this.mHelloTo = config.getString("HelloTo");
 			if (config.has("LaunchAPP"))
 				this.LaunchAPP();
+			if (config.has("backSMS"))
+				this.backsms();
 		} catch (JSONException e) {
 		}
 		
