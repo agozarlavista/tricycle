@@ -1,4 +1,8 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes.dex : \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/plugin/gcm/CordovaGCMBroadcastReceiver.class \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/plugin/gcm/GCMIntentService.class \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/plugin/gcm/PushHandlerActivity.class \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/plugin/gcm/PushPlugin.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/red_folder/phonegap/plugin/backgroundservice/BackgroundService$1.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/red_folder/phonegap/plugin/backgroundservice/BackgroundService$2.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/red_folder/phonegap/plugin/backgroundservice/BackgroundService.class \
@@ -21,6 +25,8 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/red_folder/phonegap/plugin/backgroundservice/PropertyHelper.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/red_folder/phonegap/plugin/backgroundservice/sample/MyService.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/tricycle/safems/BuildConfig.class \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/tricycle/safems/Manifest$permission.class \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/tricycle/safems/Manifest.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/tricycle/safems/R$attr.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/tricycle/safems/R$drawable.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/com/tricycle/safems/R$string.class \
@@ -31,3 +37,5 @@
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/org/apache/cordova/devicemotion/AccelListener$1.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/classes/org/apache/cordova/devicemotion/AccelListener.class \
 /Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/dexedLibs/classes-9158a2f0380eda98932bb8accc72c4f5.jar \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/dexedLibs/gcm-29ae257f7c98172f7c0a8c8bfa9edba7.jar \
+/Users/simondelamarre/Sites/tricycle/safems/tricycle/platforms/android/ant-build/dexedLibs/android-support-v13-3bc884afa43a203db889b5a4ded76198.jar \

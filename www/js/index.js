@@ -40,6 +40,19 @@ var app = {
 	receivedEvent: function(id) {
 
 	},
+    saveLocalStorage: function(key, obj) {
+        window.localStorage.setItem(key+'_date', new Date().getTime());
+	    window.localStorage.setItem(key, JSON.stringify(obj));
+    },
+    getLocalStorage: function(key) {
+		try {
+			var content = window.localStorage.getItem(key);
+			return content ? JSON.parse(content) : [];
+		} catch(err) {
+		    console.log("getLocalStorage error:", err);
+		    return [];
+        }
+    },
 	alcoolizedUserDetected: function(){
 		if (this.isUserComposeMessage){
 			this.isUserAlcoolized = true;
@@ -61,7 +74,7 @@ var app = {
 			app.isUserAlcoolized = false;
 			plugins_helper.distanceError = 0;
 		} else {
-			console.log("user is not alcoolized")
+			console.log("user is not alcoolized");
 		}
 	}
 };

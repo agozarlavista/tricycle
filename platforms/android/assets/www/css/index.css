@@ -79,8 +79,14 @@ html, body {
     padding-left:5%;
 }
 .bigText{
+    font-size:45px;
+    font-weight: bold;
+    color: #514d45;
+    text-align: center;
+}
+.mediumText{
     font-size:25px;
-    font-weight: 300;
+    font-weight: bold;
     color: #514d45;
     text-align: center;
 }

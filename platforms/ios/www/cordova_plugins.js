@@ -20,6 +20,13 @@ module.exports = [
         "clobbers": [
             "navigator.accelerometer"
         ]
+    },
+    {
+        "file": "plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js",
+        "id": "com.phonegap.plugins.PushPlugin.PushNotification",
+        "clobbers": [
+            "PushNotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -28,7 +35,8 @@ module.exports.metadata =
     "com.red_folder.phonegap.plugin.backgroundservice": "2.0.0",
     "com.red_folder.phonegap.plugin.backgroundservice.sample": "2.0.0",
     "org.apache.cordova.device": "0.2.12-dev",
-    "org.apache.cordova.device-motion": "0.2.9"
+    "org.apache.cordova.device-motion": "0.2.9",
+    "com.phonegap.plugins.PushPlugin": "2.2.1"
 }
 // BOTTOM OF METADATA
 });

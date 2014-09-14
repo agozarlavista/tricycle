@@ -84,3 +84,9 @@ html, body {
     color: #514d45;
     text-align: center;
 }
+.mediumText{
+    font-size:25px;
+    font-weight: bold;
+    color: #514d45;
+    text-align: center;
+}

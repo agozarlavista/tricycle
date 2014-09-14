@@ -41,6 +41,8 @@
 		7097C49D3DF441BAA7914107 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B966C983B4DF885C210AE /* CDVDevice.m */; };
 		6D0E84B6EE3446E08620DE8E /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 488EDE819C9F47E482E1F3E8 /* CDVAccelerometer.m */; };
 		DB0D2EFA347D498E92F96653 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2026A6A395A44EAB022A527 /* CoreMotion.framework */; };
+		93EF71B12BC441698F70C7E1 /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1BC877773430BB11B1BC6 /* AppDelegate+notification.m */; };
+		A54FD495FCEA4949BC8C8F13 /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E4E2C36828475FB79DE3D3 /* PushPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,10 @@
 		488EDE819C9F47E482E1F3E8 /* CDVAccelerometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVAccelerometer.m"; path = "org.apache.cordova.device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		C08C45727B304B378DD9A658 /* CDVAccelerometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVAccelerometer.h"; path = "org.apache.cordova.device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		E2026A6A395A44EAB022A527 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreMotion.framework"; path = "System/Library/Frameworks/CoreMotion.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		04A1BC877773430BB11B1BC6 /* AppDelegate+notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate+notification.m"; path = "com.phonegap.plugins.PushPlugin/AppDelegate+notification.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		35E4E2C36828475FB79DE3D3 /* PushPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "PushPlugin.m"; path = "com.phonegap.plugins.PushPlugin/PushPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		805556D04CF44E5CB024A293 /* AppDelegate+notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate+notification.h"; path = "com.phonegap.plugins.PushPlugin/AppDelegate+notification.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		EE7BDCEE1BD9439E9DBD319C /* PushPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PushPlugin.h"; path = "com.phonegap.plugins.PushPlugin/PushPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +242,10 @@
 				9B16E22CE5944A8CA93D3943 /* CDVDevice.h */,
 				488EDE819C9F47E482E1F3E8 /* CDVAccelerometer.m */,
 				C08C45727B304B378DD9A658 /* CDVAccelerometer.h */,
+				04A1BC877773430BB11B1BC6 /* AppDelegate+notification.m */,
+				35E4E2C36828475FB79DE3D3 /* PushPlugin.m */,
+				805556D04CF44E5CB024A293 /* AppDelegate+notification.h */,
+				EE7BDCEE1BD9439E9DBD319C /* PushPlugin.h */,
 			);
 			name = Plugins;
 			path = "SafeMS/Plugins";
@@ -432,6 +442,8 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				7097C49D3DF441BAA7914107 /* CDVDevice.m in Sources */,
 				6D0E84B6EE3446E08620DE8E /* CDVAccelerometer.m in Sources */,
+				93EF71B12BC441698F70C7E1 /* AppDelegate+notification.m in Sources */,
+				A54FD495FCEA4949BC8C8F13 /* PushPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
