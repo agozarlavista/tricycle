@@ -29,6 +29,15 @@ var question_page = {
             console.log(htmlTemplate);
             $('#screen div').first().find('#responses_list').append(htmlTemplate);
         }
+        
+        for(var i=0; i<this._quizStructure.buttons.length; i++){
+            var htmlTemplate = '<div class="actionButton '+this._quizStructure.buttons.color+'" id="btn_help_user" data-page="'+this._quizStructure.buttons.redir+'">';
+                htmlTemplate+= '<span class="buttonText">'+this._quizStructure.buttons.label+'</span>';
+                htmlTemplate+= '<i class="iconbutton dark">'+this._quizStructure.buttons.icon+'</i></div>';
+            
+            console.log(htmlTemplate);
+            $('#screen div').first().find('#responses_list').append(htmlTemplate);
+        }
         console.log('end of page');
     },
     refresh : function(){

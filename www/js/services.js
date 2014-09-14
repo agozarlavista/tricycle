@@ -7,14 +7,13 @@ var services = {
     loadService : function(params, callBack, url, method){
         var self = this;
         this._callBack = callBack;
-        if (Method == null){
-            Method = "GET";
+        if (method == null){
+            method = "GET";
         }
-        var params = this.getSomeParams(data, serviceURI);
         $.ajax(
             {
-                url: services._serviceURI + serviceURI,
-                type: Method,
+                url: services._serviceURI + url,
+                type: method,
                 data: params,
                 dataType: 'json',
 				cache: false,
@@ -28,13 +27,20 @@ var services = {
             }
         );
     },
+    ajaxErrorCallBack : function(e){
+        console.log('error ', e);
+    },
     register : function(){
+        if(app.getLocalStorage('user') == ""){
+            return;
+        }
         services.loadService(
             {
-                uid:device.uid,
+                uid:device.uuid,
                 gcm_reg_id:"fuckingappkey"
             },
             function(data){
+                console.log(data);
                 app.saveLocalStorage('user', data);
             },
             "account_create",
@@ -44,7 +50,7 @@ var services = {
     request : function(){
         services.loadService(
             {
-                user_id:device.uid,
+                user_id:device.uuid,
                 message:"mon message test",
                 theme:"ma femme"
             },

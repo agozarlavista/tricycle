@@ -6,10 +6,11 @@ var structure_helper = {
             'description':'', 
             'responses':[
                 {'label':'Mon Boss', 'redir':'chooseyourboss'},
-                {'label':'Une Femme', 'redir':'chooseyourgirl'},
-                {'label':'Un Homme', 'redir':'chooseyourguy'},
-                {'label':'Un Service', 'redir':'chooseyourservice'}
-            ]
+                {'label':'Une Femme', 'redir':'chooseyourboss'},
+                {'label':'Un Homme', 'redir':'chooseyourboss'},
+                {'label':'Un Service', 'redir':'chooseyourboss'}
+            ],
+            'buttons':[]
         },
         'chooseyourboss':{
             'title':'Mon Boss',
@@ -17,21 +18,21 @@ var structure_helper = {
             'description':'', 
             'responses':[
                 {'label':'Je démissionne', 'redir':'wrongwayboss'},
-                {'label':'Je vais être en retard', 'redir':'sorryyourboss'},
+                {'label':'Je vais être en retard', 'redir':'wrongwayboss'},
                 {'label':'je t\'aime', 'redir':'wrongwayboss'},
-                {'label':'félicitation, beau travail!', 'redir':'complimentyourboss'}
-            ]
+                {'label':'félicitation, beau travail!', 'redir':'wrongwayboss'}
+            ],
+            'buttons':[]
         },
         'wrongwayboss':{
-            'title':'.',
-            'label':'vas te coucher, demain est un autre jour.',
-            'description':'Ça va pas la tête, tu vas pas te faire ton boss. mauvaise idée. Prends bien en compte tout les paramètres...',
+            'title':'Wrong Way',
+            'label':'Vas te coucher, demain est un autre jour.',
+            'description':'D\'après SafeMS, ce n\'est ni l\'heure, ni le lieu, ni le moment pour faire cette déclaration. Keep Calm, et demande de l\'aide à la communauté si tu ne veux pas te reposer tout de suite.',
             'responses':[
-                {'label':'Demander de l\'aide!', 'redir':'callnegre'}
+            ],
+            'buttons':[
+                {'label':'Je veux qu\'on m\'aide', 'icon':'F', 'redir':'help_form', 'color':'greena'}
             ]
-        },
-        'chooseyourgirl':{
-            
         }
     }
 }
