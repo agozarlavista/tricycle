@@ -1,4 +1,5 @@
 var app = {
+	isUserAlcoolized: false,
 	initialize: function() {
 		this.bindEvents();
 	},
@@ -9,6 +10,15 @@ var app = {
 		navigation.init();
         myService = cordova.plugins.myService;
         background_helper.init();
+        document.addEventListener(
+        	"resume", 
+        	function() { 
+        		console.log(this);
+        		app.onResume(); 
+        	}, 
+        	false
+        );
+
 		//getStatus();
         /*startService();
         enableTimer();
@@ -27,18 +37,25 @@ var app = {
 	},
 	receivedEvent: function(id) {
 
+	},
+	alcoolizedUserDetected: function(){
+		this.isUserAlcoolized = true;
+	    var config = {
+	        "HelloTo" : "plop",
+	        "LaunchAPP" : "yes"
+	    };
+	    myService.setConfiguration(
+		    config,
+		    function(r){handleSuccess(r)},
+		    function(e){handleError(e)}
+		);
+	},
+	onResume: function (){
+		if (app.isUserAlcoolized){
+			console.log('navigation.goto("detect")');
+		} else {
+			console.log("user is not alcoolized")
+		}
 	}
 };
 var myService;
-
-$("#aaaaaaaaa").on("click", function(){
-	console.log("tapette");
-	var config = { 
-					"HelloTo" : helloToString,
-					"LaunchAPP" : "yes"
-				}; 
-	myService.setConfiguration(	config,
-								function(r){handleSuccess(r)},
-								function(e){handleError(e)});
-	background_helper.registerForUpdates();
-})

@@ -49,9 +49,8 @@ var background_helper = {
         console.log('registerForUpdates');
         var self = this;    
         registerForUpdates(function(data){
-            console.log(data);
-            if(data.code == 200){
-                console.log('say hello background');
+            if(data.data.LatestResult.Message){
+                console.log(data.data.LatestResult.Message);
             }
         });
     },
